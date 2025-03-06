@@ -7,14 +7,14 @@ import threading
 choice = input("Do you want to be a Host or Connect? (h/c): ")
 if choice == "h":
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #Indicates that server is using IPV4 and TCP protocol
-    server.bind(("172.21.0.163", 9999)) # defines IP and Port for the Server
+    server.bind(("127.0.0.1", 9999)) # defines IP and Port for the Server
     server.listen(10)
     
     client, _ = server.accept()
     
 elif choice == "c": 
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client.connect(("172.21.0.163", 9999))
+    client.connect(("127.0.0.1", 9999))
 
 else: 
     exit()
